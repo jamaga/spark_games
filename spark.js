@@ -12,9 +12,7 @@ v.querySelector("#save").on('click', saveDatainlocalStorage);
 
 function saveDatainlocalStorage() {
 	var storage = TinderStorage.getInstance();
-	for ( var i=0; i < datafromServer.locations_list.length; i++ ){
-  	storage.create( i , datafromServer.locations_list[i]);
+	for ( var i = 0; i < datafromServer.locations_list.length; i++ ){
+  	storage.create( datafromServer.locations_list[i].name , datafromServer.locations_list[i]);
   }
 }
-
-
