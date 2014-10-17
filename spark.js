@@ -2,6 +2,8 @@ var datafromServer = {};
 var locationHere = "";
 var longitude;
 var latitude;
+var addressDetails;
+
 var apicall = function(){
 	TinderAjax.getJSON("http://ironhack-meet-me-api.herokuapp.com/locations.json", function(data) {
    	console.log(data);
@@ -15,7 +17,7 @@ v.querySelector("#ajax").on('click', apicall);
 v.querySelector("#save").on('click', saveDatainlocalStorage);
 v.querySelector("#populate").on('click', populateList);
 v.querySelector("#geolocate").on('click', geolocateMe);
-v.querySelector("#notify").on('click', addressInfo);
+v.querySelector("#notify").on('click', getAddress);
 
 
 function saveDatainlocalStorage() {
@@ -45,18 +47,18 @@ function geolocateMe() {
   v.querySelector("#geolocate").after(" Success!!!!");
 }
 
-function addressInfo() {
+function getAddress() {
 	TinderAjax.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude , function(data) {
  	var addressDetails =  data.results[0].formatted_address; 
- 	NotifyMyLocation(addressDetails);  
+ 	NotifyMyLocation(addressDetails); 
 	})
 }
 
-function NotifyMyLocation (addressDetails) {
+function NotifyMyLocation(addressDetails) {
 	var options = {
-	       icon: "http://lorempixel.com/60/60",
+	       icon: "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=14&size=100x100",
 	     	 body: addressDetails
-	     }
+	     };
 	var notification = TinderNotification.getInstance();
 	notification.notificate(locationHere, options);
 	console.log("located!");
