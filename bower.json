@@ -1,0 +1,16 @@
+{
+  "name": "broccoli",
+  "version": "0.0.0",
+  "authors": [
+    "aga <hipo.beaver@gmail.com>"
+  ],
+  "main": "spark.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
