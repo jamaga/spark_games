@@ -1,0 +1,1 @@
+Components.utils.import("my_module.jsm");
