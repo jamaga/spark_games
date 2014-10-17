@@ -6,19 +6,3 @@ var apicall = function(){
 
 var v = new TinderQuery();
 v.querySelector("#ajax").on('click', apicall);
-
-// var storage = TinderStorage.getInstance();
-// 	 storage.create("location1", { address: "Main Street" });
-//    storage.read("location1");
-//    storage.update("location1", { address: "Secondary Street" });
-//    storage.destroy("location1");
-
-
-
-
-
-
-
-
-
-
