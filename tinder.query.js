@@ -38,7 +38,7 @@ TinderQuery.prototype.append = function (html) {
     this.element.innerHTML += html;
     return this;
 }
-
+/* For the success message */
 TinderQuery.prototype.after = function (html) {
     this.element.insertAdjacentHTML("afterend", html);
     return this;
